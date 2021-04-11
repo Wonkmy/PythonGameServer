@@ -1,8 +1,14 @@
 import openpyxl
-wb=openpyxl.Workbook()
+wb=openpyxl.load_workbook("WorkTest.xlsx")
+ws=wb.active
+serch_content="待开发"
+
+for each_L in ws['L']:
+    each_L.value ="已完成"
+#wb=openpyxl.Workbook()
 #===============================
 #修改指定工作表的标签颜色
-ws1=wb.create_sheet(title="wonkmy")
+#ws1=wb.create_sheet(title="wonkmy")
 #ws2=wb.create_sheet(title="game")
 #ws3=wb.create_sheet(title="wonkmygame")
 
@@ -21,6 +27,6 @@ ws1=wb.create_sheet(title="wonkmy")
 #ws1.unmerge_cells("A1:C3")
 #==============================
 #冻结和解冻单元格
-ws1.freeze_panes='B3'#B3的意思是，以B3单元格为基准，左边和上边的单元格冻结，自身不冻结
-ws1.freeze_panes='A1'#B3的意思是，以A1单元格为基准，左边和上边的单元格冻结，自身不冻结,即可实现解冻
-wb.save("wonkmygame.xlsx")
+#ws1.freeze_panes='B3'#B3的意思是，以B3单元格为基准，左边和上边的单元格冻结，自身不冻结
+#ws1.freeze_panes='A1'#B3的意思是，以A1单元格为基准，左边和上边的单元格冻结，自身不冻结,即可实现解冻
+wb.save("WorkTest.xlsx")
